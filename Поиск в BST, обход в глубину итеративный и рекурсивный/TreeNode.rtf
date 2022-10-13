@@ -1,0 +1,55 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 public boolean search(int value) \{\
+        TreeNode current = root;\
+        while (true) \{\
+            if (current.value == value) \{\
+                return true;\
+            \}\
+            if (value < current.value) \{\
+                // \uc0\u1053 \u1077 \u1086 \u1073 \u1093 \u1086 \u1076 \u1080 \u1084 \u1086  \u1080 \u1076 \u1090 \u1080  \u1074 \u1083 \u1077 \u1074 \u1086 \
+                if (current.leftChild != null) \{\
+                    current = current.leftChild;\
+                \} else \{\
+                    return false;\
+                \}\
+            \} else \{\
+                // \uc0\u1053 \u1077 \u1086 \u1073 \u1093 \u1086 \u1076 \u1080 \u1084 \u1086  \u1080 \u1076 \u1090 \u1080  \u1074 \u1087 \u1088 \u1072 \u1074 \u1086 \
+                if (current.rightChild != null) \{\
+                    current = current.rightChild;\
+                \} else \{\
+                    return false;\
+                \}\
+            \}\
+        \}\
+    \}\
+\
+\
+public TreeNode searchElement(int value) \{\
+        TreeNode current = root;\
+        while (true) \{\
+            if (current.value == value) \{\
+                return current;\
+            \}\
+            if (value < current.value) \{\
+                // \uc0\u1053 \u1077 \u1086 \u1073 \u1093 \u1086 \u1076 \u1080 \u1084 \u1086  \u1080 \u1076 \u1090 \u1080  \u1074 \u1083 \u1077 \u1074 \u1086 \
+                if (current.leftChild != null) \{\
+                    current = current.leftChild;\
+                \} else \{\
+                    return null;\
+                \}\
+            \} else \{\
+                // \uc0\u1053 \u1077 \u1086 \u1073 \u1093 \u1086 \u1076 \u1080 \u1084 \u1086  \u1080 \u1076 \u1090 \u1080  \u1074 \u1087 \u1088 \u1072 \u1074 \u1086 \
+                if (current.rightChild != null) \{\
+                    current = current.rightChild;\
+                \} else \{\
+                    return null;\
+                \}\
+            \}\
+        \}\
+    \}}
